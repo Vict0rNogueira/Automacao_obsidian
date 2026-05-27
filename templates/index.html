@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>StudyBrain</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Adicionar Conteúdos</h1>
+
+    <form method="POST">
+
+        <div id="campos">
+
+            <div class="bloco">
+
+                <select name="materia" required>
+
+                    <option value="">Escolha a matéria</option>
+
+                    <option value="Administrativo">Administrativo</option>
+                    <option value="Constitucional">Constitucional</option>
+                    <option value="Direito Civil">Direito Civil</option>
+                    <option value="Direito Penal">Direito Penal</option>
+                    <option value="Direito-Processual-Civil">Direito Processual Civil</option>
+                    <option value="Legislação">Legislação</option>
+                    <option value="PCD">PCD</option>
+                    <option value="Português">Português</option>
+                    <option value="Processual-Penal">Processual Penal</option>
+                    <option value="RLM">RLM</option>
+
+                </select>
+
+                <input
+                    type="text"
+                    name="conteudo"
+                    placeholder="Conteúdo"
+                    required
+                >
+
+                <input
+                    type="text"
+                    name="notebooklm"
+                    placeholder="Link do NotebookLM"
+                >
+
+            </div>
+
+        </div>
+
+        <button type="button" onclick="adicionarCampo()">
+            + Adicionar Matéria
+        </button>
+
+        <button type="submit">
+            Gerar Arquivos
+        </button>
+
+    </form>
+
+</div>
+
+<script>
+
+function adicionarCampo() {
+
+    const bloco = document.createElement("div")
+
+    bloco.classList.add("bloco")
+
+    bloco.innerHTML = `
+
+        <select name="materia" required>
+
+            <option value="">Escolha a matéria</option>
+
+            <option value="Administrativo">Administrativo</option>
+            <option value="Constitucional">Constitucional</option>
+            <option value="Direito Civil">Direito Civil</option>
+            <option value="Direito Penal">Direito Penal</option>
+            <option value="Direito-Processual-Civil">Direito Processual Civil</option>
+            <option value="Legislação">Legislação</option>
+            <option value="PCD">PCD</option>
+            <option value="Português">Português</option>
+            <option value="Processual-Penal">Processual Penal</option>
+            <option value="RLM">RLM</option>
+
+        </select>
+
+        <input
+            type="text"
+            name="conteudo"
+            placeholder="Conteúdo"
+            required
+        >
+
+        <input
+            type="text"
+            name="notebooklm"
+            placeholder="Link do NotebookLM"
+        >
+
+    `
+
+    document.getElementById("campos").appendChild(bloco)
+}
+
+</script>
+
+</body>
+</html>

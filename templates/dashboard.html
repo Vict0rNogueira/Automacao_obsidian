@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Dashboard de Estudos</h1>
+
+    {% for estudo in estudos %}
+
+        <div class="card">
+            <h2>{{ estudo[1] }}</h2>
+            <p><strong>Matéria:</strong> {{ estudo[2] }}</p>
+            <p><strong>Conteúdo:</strong> {{ estudo[3] }}</p>
+        </div>
+
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
