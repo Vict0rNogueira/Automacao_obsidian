@@ -1,1 +1,13 @@
-Flask>=3.0,<4
+# Web Framework
+Flask>=3.0,<4.0
+Werkzeug>=3.0.0
+
+# API & HTTP
+google-genai>=2.7.0
+requests>=2.31.0
+
+# Environment & Configuration
+python-dotenv>=1.0.0
+
+# File & Path Handling
+# (included with Python standard library)

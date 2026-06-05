@@ -92,3 +92,9 @@ ehthumbs.db
 
 # OneDrive temp
 ~$*
+
+# Project specific
+temp/
+tmp/
+*.db
+*.sqlite

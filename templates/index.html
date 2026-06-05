@@ -1,36 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
     <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>StudyBrain</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
 </head>
+
 <body>
 
 <div class="container">
 
-    <h1>Adicionar Conteúdos</h1>
+    <div class="header">
+
+        <h1>StudyBrain</h1>
+
+        <p>
+            IA + Obsidian + NotebookLM
+        </p>
+
+    </div>
 
     <form method="POST">
 
         <div id="campos">
 
+            <!-- BLOCO -->
+
             <div class="bloco">
 
                 <select name="materia" required>
 
-                    <option value="">Escolha a matéria</option>
+                    <option value="">
+                        Escolha a matéria
+                    </option>
 
-                    <option value="Administrativo">Administrativo</option>
-                    <option value="Constitucional">Constitucional</option>
-                    <option value="Direito Civil">Direito Civil</option>
-                    <option value="Direito Penal">Direito Penal</option>
-                    <option value="Direito-Processual-Civil">Direito Processual Civil</option>
-                    <option value="Legislação">Legislação</option>
-                    <option value="PCD">PCD</option>
-                    <option value="Português">Português</option>
-                    <option value="Processual-Penal">Processual Penal</option>
-                    <option value="RLM">RLM</option>
+                    <option value="Administrativo">
+                        Administrativo
+                    </option>
+
+                    <option value="Constitucional">
+                        Constitucional
+                    </option>
+
+                    <option value="Direito Civil">
+                        Direito Civil
+                    </option>
+
+                    <option value="Direito Penal">
+                        Direito Penal
+                    </option>
+
+                    <option value="Legislação">
+                        Legislação
+                    </option>
+
+                    <option value="Português">
+                        Português
+                    </option>
+
+                    <option value="Processual Penal">
+                        Processual Penal
+                    </option>
+
+                    <option value="RLM">
+                        RLM
+                    </option>
 
                 </select>
 
@@ -47,21 +93,42 @@
                     placeholder="Link do NotebookLM"
                 >
 
+                <textarea
+                    name="texto"
+                    rows="10"
+                    placeholder="Cole aqui o resumo ou transcript do NotebookLM..."
+                ></textarea>
+
             </div>
 
         </div>
 
-        <button type="button" onclick="adicionarCampo()">
-            + Adicionar Matéria
-        </button>
+        <!-- BOTÕES -->
 
-        <button type="submit">
-            Gerar Arquivos
-        </button>
+        <div class="buttons">
+
+            <button
+                type="button"
+                onclick="adicionarCampo()"
+                class="btn-add"
+            >
+                + Adicionar Matéria
+            </button>
+
+            <button
+                type="submit"
+                class="btn-submit"
+            >
+                Gerar Arquivos
+            </button>
+
+        </div>
 
     </form>
 
 </div>
+
+<!-- SCRIPT -->
 
 <script>
 
@@ -75,18 +142,41 @@ function adicionarCampo() {
 
         <select name="materia" required>
 
-            <option value="">Escolha a matéria</option>
+            <option value="">
+                Escolha a matéria
+            </option>
 
-            <option value="Administrativo">Administrativo</option>
-            <option value="Constitucional">Constitucional</option>
-            <option value="Direito Civil">Direito Civil</option>
-            <option value="Direito Penal">Direito Penal</option>
-            <option value="Direito-Processual-Civil">Direito Processual Civil</option>
-            <option value="Legislação">Legislação</option>
-            <option value="PCD">PCD</option>
-            <option value="Português">Português</option>
-            <option value="Processual-Penal">Processual Penal</option>
-            <option value="RLM">RLM</option>
+            <option value="Administrativo">
+                Administrativo
+            </option>
+
+            <option value="Constitucional">
+                Constitucional
+            </option>
+
+            <option value="Direito Civil">
+                Direito Civil
+            </option>
+
+            <option value="Direito Penal">
+                Direito Penal
+            </option>
+
+            <option value="Legislação">
+                Legislação
+            </option>
+
+            <option value="Português">
+                Português
+            </option>
+
+            <option value="Processual Penal">
+                Processual Penal
+            </option>
+
+            <option value="RLM">
+                RLM
+            </option>
 
         </select>
 
@@ -103,9 +193,17 @@ function adicionarCampo() {
             placeholder="Link do NotebookLM"
         >
 
+        <textarea
+            name="texto"
+            rows="10"
+            placeholder="Cole aqui o texto do NotebookLM..."
+        ></textarea>
+
     `
 
-    document.getElementById("campos").appendChild(bloco)
+    document
+        .getElementById("campos")
+        .appendChild(bloco)
 }
 
 </script>

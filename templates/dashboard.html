@@ -1,27 +1,154 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
+
 <head>
+
     <meta charset="UTF-8">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>StudyBrain</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
 </head>
+
 <body>
 
-<div class="container">
+<div class="dashboard-container">
 
-    <h1>Dashboard de Estudos</h1>
+    <!-- HEADER -->
 
-    {% for estudo in estudos %}
+    <div class="dashboard-header">
 
-        <div class="card">
-            <h2>{{ estudo[1] }}</h2>
-            <p><strong>Matéria:</strong> {{ estudo[2] }}</p>
-            <p><strong>Conteúdo:</strong> {{ estudo[3] }}</p>
+        <h1>StudyBrain</h1>
+
+        <p>
+            NotebookLM + Gemini + Obsidian
+        </p>
+
+    </div>
+
+    <!-- FORM -->
+
+    <form
+        method="POST"
+        enctype="multipart/form-data"
+    >
+
+        <div class="upload-card">
+
+            <!-- MATÉRIA -->
+
+            <label>
+                Matéria
+            </label>
+
+            <select
+                name="materia"
+                required
+            >
+
+                <option value="">
+                    Escolha a matéria
+                </option>
+
+                <option value="Administrativo">
+                    Administrativo
+                </option>
+
+                <option value="Constitucional">
+                    Constitucional
+                </option>
+
+                <option value="Direito Civil">
+                    Direito Civil
+                </option>
+
+                <option value="Direito Penal">
+                    Direito Penal
+                </option>
+
+                <option value="Legislação">
+                    Legislação
+                </option>
+
+                <option value="Português">
+                    Português
+                </option>
+
+                <option value="Processual Penal">
+                    Processual Penal
+                </option>
+
+                <option value="RLM">
+                    RLM
+                </option>
+
+            </select>
+
+            <!-- CONTEÚDO -->
+
+            <label>
+                Conteúdo
+            </label>
+
+            <input
+                type="text"
+                name="conteudo"
+                placeholder="Ex: Poder Executivo"
+                required
+            >
+
+            <!-- NOTEBOOKLM -->
+
+            <label>
+                Link NotebookLM
+            </label>
+
+            <input
+                type="text"
+                name="notebooklm"
+                placeholder="Cole o link do NotebookLM"
+            >
+
+            <!-- ÁUDIO -->
+
+            <label>
+                Upload Podcast NotebookLM
+            </label>
+
+            <input
+                type="file"
+                name="audio"
+                accept=".mp3,.wav,.m4a,.mp4,.aac,.ogg"
+                required
+            >
+
+            <!-- BOTÃO -->
+
+            <button
+                type="submit"
+                class="btn-gerar"
+            >
+
+                Gerar Material IA
+
+            </button>
+
         </div>
 
-    {% endfor %}
+    </form>
 
 </div>
 
 </body>
+
 </html>
